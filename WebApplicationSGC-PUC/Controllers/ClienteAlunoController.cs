@@ -48,7 +48,7 @@ namespace WebApplicationSGC_PUC.Controllers
                     ClienteAluno cA = new ClienteAluno();
                     return (cA.getAllClienteAluno(db).ToList());
                 }
-
+                
             }
             catch (Exception e)
             {
