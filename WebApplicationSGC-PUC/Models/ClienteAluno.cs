@@ -47,7 +47,7 @@ namespace WebApplicationSGC_PUC.Models
             {
                 if (entities1 != null)
                 {
-                    var result = entities1.ClienteAluno.ToList().Find(e => e.Email.Equals(usuario) && e.Senha.Equals(senha));
+                    var result = entities1.ClienteAluno.ToList().Find(e => e.Email.ToLower().Equals(usuario) && e.Senha.Equals(senha));
 
                     return result==null?false:true;
                 }

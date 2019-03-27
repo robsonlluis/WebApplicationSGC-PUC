@@ -66,7 +66,7 @@ namespace WebApplicationSGC_PUC.Controllers
                 using (var db = new Entities1())
                 {
                     ClienteAluno cA = new ClienteAluno();
-                    return new string[] { "Resultado", (cA.getValidateCredencials(db, usuario, senha)).ToString() };
+                    return new string[] { "Resultado", (cA.getValidateCredencials(db, usuario.ToLower(), senha)).ToString() };
                 }
 
             }
