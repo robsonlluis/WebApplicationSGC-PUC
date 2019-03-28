@@ -10,6 +10,11 @@ using WebApplicationSGC_PUC.Models;
 
 namespace WebApplicationSGC_PUC.Controllers
 {
+    public class cResultado
+    {
+        public string resultado;
+    }
+
     public class ClienteAlunoController : ApiController
     {
         // GET: api/ClienteAluno
@@ -59,21 +64,25 @@ namespace WebApplicationSGC_PUC.Controllers
 
         [HttpGet]
         [Route("api/ClienteAluno/{usuario}/{senha}")]
-        public IEnumerable<string> getValidateCredencials(string usuario, string senha)
+        public cResultado getValidateCredencials(string usuario, string senha)
         {
             try
             {
                 using (var db = new Entities1())
                 {
                     ClienteAluno cA = new ClienteAluno();
-                    return new string[] { "Resultado", (cA.getValidateCredencials(db, usuario.ToLower(), senha)).ToString() };
+                    cResultado resultado = new cResultado();
+                    resultado.resultado = (cA.getValidateCredencials(db, usuario.ToLower(), senha)).ToString();
+                    return resultado;
                 }
 
             }
             catch (Exception e)
             {
 
-                return new string[] { "Error", e.InnerException.ToString() };
+                cResultado resultado = new cResultado();
+                resultado.resultado = "Error";
+                return resultado;
             }
         }
     }
