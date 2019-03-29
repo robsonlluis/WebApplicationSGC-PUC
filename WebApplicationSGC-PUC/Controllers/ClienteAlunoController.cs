@@ -17,12 +17,6 @@ namespace WebApplicationSGC_PUC.Controllers
 
     public class ClienteAlunoController : ApiController
     {
-        // GET: api/ClienteAluno
-        //public IEnumerable<string> Get()
-        //{
-        //     return new string[] { "value1", "value2" };
-        //}
-
         // GET: api/ClienteAluno/5
         public string Get(int id)
         {
@@ -44,6 +38,8 @@ namespace WebApplicationSGC_PUC.Controllers
         {
         }
 
+        //Robson Souza.
+        //Retorna a lista de todos os alunos cadastrados.
         public List<ClienteAluno> getAllClienteAluno()
         {
             try
@@ -62,6 +58,9 @@ namespace WebApplicationSGC_PUC.Controllers
             }
         }
 
+        //Robson Souza.
+        //Valida se as credenciais fornecidas estão corretas.
+        //Retorna um Json com a chave "resultado" igual a TRUE se as credenciais estão corretas ou FALSE se estão incorretas.
         [HttpGet]
         [Route("api/ClienteAluno/{usuario}/{senha}")]
         public cResultado getValidateCredencials(string usuario, string senha)

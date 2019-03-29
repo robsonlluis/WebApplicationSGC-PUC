@@ -25,6 +25,8 @@ namespace WebApplicationSGC_PUC.Models
         public string Email { get; set; }
         public string Senha { get; set; }
 
+        //Robson Souza.
+        //Retorna a lista de todos os alunos cadastrados.
         public List<ClienteAluno> getAllClienteAluno(Entities1 entities1)
         {
             try
@@ -41,6 +43,9 @@ namespace WebApplicationSGC_PUC.Models
             }
         }
 
+        //Robson Souza.
+        //Valida se as credenciais fornecidas estão corretas.
+        //Retorna um Json com a chave "resultado" igual a TRUE se as credenciais estão corretas ou FALSE para incorretas.
         public bool getValidateCredencials(Entities1 entities1, string usuario, string senha)
         {
             try
