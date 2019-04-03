@@ -1,6 +1,6 @@
 # WebApplicationSGC-PUC
 
-Web Application (REST) desenvolvido em C# e utilizando base de dados Microsft SQL Server.
+Web Application (REST) desenvolvido em C# e utilizando base de dados Microsoft SQL Server.
 
 ## Requisitos
 
